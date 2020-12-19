@@ -35,3 +35,11 @@ SpriteMons:
 	db GYARADOS
 	db LUGIA
 	db HO_OH
+	db FARFETCH_D
+	db MILTANK
+	db GENGAR
+	db AMPHAROS
+	db HERACROSS
+	db HYPNO
+	db SKARMORY
+	db KINGDRA

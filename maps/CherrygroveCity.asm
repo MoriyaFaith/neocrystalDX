@@ -153,6 +153,8 @@ CherrygroveSilverSceneNorth:
 	playmusic MUSIC_RIVAL_AFTER
 	opentext
 	writetext CherrygroveRivalText_YouWon
+	promptbutton
+	writetext CherrygroveRivalText_StrongestTrainer
 	waitbutton
 	closetext
 	sjump .FinishRival
@@ -161,6 +163,8 @@ CherrygroveSilverSceneNorth:
 	playmusic MUSIC_RIVAL_AFTER
 	opentext
 	writetext CherrygroveRivalText_YouLost
+	promptbutton
+	writetext CherrygroveRivalText_StrongestTrainer
 	waitbutton
 	closetext
 .FinishRival:
@@ -169,6 +173,20 @@ CherrygroveSilverSceneNorth:
 	turnobject PLAYER, LEFT
 	applymovement CHERRYGROVECITY_SILVER, CherrygroveCity_RivalExitsStageLeft
 	disappear CHERRYGROVECITY_SILVER
+	applymovement PLAYER, CherrygroveCity_FindRivalsGlove
+	pause 30
+	turnobject PLAYER, LEFT
+	pause 30
+	turnobject PLAYER, RIGHT
+	pause 30
+	showemote EMOTE_SHOCK, PLAYER, 15
+	opentext
+	writetext CherrygroveRivalText_Glove1
+	promptbutton
+	special NameRival
+	writetext CherrygroveRivalText_Glove2
+	waitbutton
+	closetext
 	setscene SCENE_CHERRYGROVECITY_NOTHING
 	special HealParty
 	playmapmusic
@@ -317,6 +335,11 @@ CherrygroveCity_RivalPushesYouOutOfTheWay:
 	turn_head UP
 	step_end
 
+CherrygroveCity_FindRivalsGlove:
+	step UP
+	turn_head UP
+	step_end
+
 CherrygroveCity_UnusedMovementData:
 	step LEFT
 	turn_head DOWN
@@ -436,19 +459,23 @@ CherrygroveRivalText_Seen:
 	para "You got a #MON"
 	line "at the LAB."
 
-	para "What a waste."
-	line "A wimp like you."
+	para "That's why a"
+	line "#BALL was"
+
+	cont "missing from the"
+	cont "table."
 
 	para "<……> <……> <……>"
 
-	para "Don't you get what"
-	line "I'm saying?"
+	para "You take me for a"
+	line "thief?"
 
 	para "Well, I too, have"
 	line "a good #MON."
 
 	para "I'll show you"
-	line "what I mean!"
+	line "how real #MON"
+	cont "TRAINERS battle!"
 	done
 
 SilverCherrygroveWinText:
@@ -459,12 +486,8 @@ SilverCherrygroveWinText:
 CherrygroveRivalText_YouLost:
 	text "<……> <……> <……>"
 
-	para "My name's ???."
-
-	para "I'm going to be"
-	line "the world's great-"
-	cont "est #MON"
-	cont "trainer."
+	para "Don't get cocky"
+	line "because you won."
 	done
 
 SilverCherrygroveLossText:
@@ -475,14 +498,36 @@ SilverCherrygroveLossText:
 CherrygroveRivalText_YouWon:
 	text "<……> <……> <……>"
 
-	para "My name's ???."
-
-	para "I'm going to be"
-	line "the world's great-"
-	cont "est #MON"
-	cont "trainer."
+	para "Hmph. I expected"
+	line "as such from"
+	cont "someone like you."
 	done
 
+CherrygroveRivalText_StrongestTrainer:
+	text "Know this."
+
+	para "I'm going to be"
+	line "the world's"
+	cont "greatest #MON"
+	cont "trainer."
+
+	para "Stay out of my"
+	line "way."
+	done
+CherrygroveRivalText_Glove1:
+	text "Huh? There's a"
+	line "glove on the"
+	cont "ground<……>"
+
+	para "There seems to be"
+	line "a name on the"
+	cont "inside<……>"
+	done
+CherrygroveRivalText_Glove2:
+	text "<RIVAL><……>"
+	line "Is that the"
+	cont "TRAINER's name?"
+	done
 CherrygroveTeacherText_NoMapCard:
 	text "Did you talk to"
 	line "the old man by the"

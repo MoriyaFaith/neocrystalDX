@@ -55,9 +55,9 @@ PokecomCenterAdminOfficeMobileComputer1:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 3 ; items
-	db "#　つうしん　クラブ@" ; # COM CLUB
-	db "モバイルセンター@" ; MOBILE CENTER
-	db "やめる@" ; QUIT
+	db "COM CLUB@" ; # COM CLUB
+	db "MOBILE CENTER@" ; MOBILE CENTER
+	db "QUIT@" ; QUIT
 
 PokecomCenterAdminOfficeMobileComputer2:
 	opentext
@@ -97,12 +97,24 @@ PokecomCenterAdminOfficeMobileComputer2:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 3 ; items
-	db "でんわ<WO>つかうとき@" ; Use phone
-	db "でんわ<GA>つながらないとき@" ; Don't use phone
-	db "やめる@" ; QUIT
+	db "Use PHONE@" ; Use phone
+	db "Don't use PHONE@" ; Don't use phone
+	db "QUIT@" ; QUIT
+
+EnableGSBallScene:
+	ld a, BANK(sMobileEventIndex)
+	call OpenSRAM
+	ld a, MOBILE_EVENT_OBJECT_GS_BALL
+	ld [sMobileEventIndex], a
+	jp CloseSRAM
 
 PokecomCenterAdminOfficeMobileComputer3:
-	jumptext PokecomCenterAdminOfficeMobileComputer3Text
+	opentext 
+	writetext PokecomCenterAdminOfficeMobileComputer3Text
+	waitbutton
+	callasm EnableGSBallScene
+	closetext
+	end
 
 PokecomCenterAdminOfficeMobileScientist1Text:
 	text "#COM CENTER and"
@@ -266,6 +278,10 @@ PokecomCenterAdminOfficeMobile_MapEvents:
 	def_warp_events
 	warp_event  0, 31, GOLDENROD_POKECENTER_1F, 3
 	warp_event  1, 31, GOLDENROD_POKECENTER_1F, 3
+	warp_event  6, 15, GOLDENROD_CITY, 15
+	warp_event  7, 15, GOLDENROD_CITY, 15
+	warp_event  0,  6, POKECOM_CENTER_ADMIN_OFFICE_MOBILE, 1
+	warp_event  0, 15, POKECENTER_2F, 1
 
 	def_coord_events
 

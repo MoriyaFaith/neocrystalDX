@@ -277,6 +277,8 @@ DoPlayerMovement::
 	jr nc, .ice
 
 ; Downhill riding is slower when not moving down.
+	call .RunCheck  ;uncomment to add running
+	jr z, .run
 	call .BikeCheck
 	jr nz, .walk
 
@@ -289,6 +291,12 @@ DoPlayerMovement::
 	jr z, .fast
 
 	ld a, STEP_WALK
+	call .DoStep
+	scf
+	ret
+
+.run
+	ld a, STEP_RUN
 	call .DoStep
 	scf
 	ret
@@ -399,8 +407,8 @@ DoPlayerMovement::
 ; making bumps silent.
 
 	ld a, [wWalkingDirection]
-	; cp STANDING
-	; jr z, .not_warp
+	 cp STANDING
+	 jr z, .not_warp
 	ld e, a
 	ld d, 0
 	ld hl, .EdgeWarps
@@ -412,9 +420,6 @@ DoPlayerMovement::
 	ld a, TRUE
 	ld [wWalkingIntoEdgeWarp], a
 	ld a, [wWalkingDirection]
-	; This is in the wrong place.
-	cp STANDING
-	jr z, .not_warp
 
 	ld e, a
 	ld a, [wPlayerDirection]
@@ -478,6 +483,7 @@ DoPlayerMovement::
 	dw .TurningStep
 	dw .BackJumpStep
 	dw .FinishFacing
+	dw .RunStep
 
 .SlowStep:
 	slow_step DOWN
@@ -519,6 +525,11 @@ DoPlayerMovement::
 	db $80 | UP
 	db $80 | LEFT
 	db $80 | RIGHT
+.RunStep:
+	big_step DOWN
+	big_step UP
+	big_step LEFT
+	big_step RIGHT
 
 .StandInPlace:
 	ld a, 0
@@ -735,6 +746,15 @@ ENDM
 	cp PLAYER_BIKE
 	ret z
 	cp PLAYER_SKATE
+	ret
+
+.RunCheck:
+	ld a, [wPlayerState]
+	cp PLAYER_NORMAL
+	ret nz
+	ldh a, [hJoypadDown]
+	and B_BUTTON
+	cp B_BUTTON
 	ret
 
 .CheckWalkable:

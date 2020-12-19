@@ -36,6 +36,8 @@
 	const LANDMARK_WHIRL_ISLANDS     ; 1f
 	const LANDMARK_ROUTE_41          ; 20
 	const LANDMARK_CIANWOOD_CITY     ; 21
+	const LANDMARK_ROUTE_47
+	const LANDMARK_ROUTE_48
 	const LANDMARK_ROUTE_42          ; 22
 	const LANDMARK_MT_MORTAR         ; 23
 	const LANDMARK_MAHOGANY_TOWN     ; 24

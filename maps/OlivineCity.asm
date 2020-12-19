@@ -166,43 +166,44 @@ MovementData_0x1a88f7:
 	step_end
 
 OlivineCityRivalText:
-	text "…"
+	text "<RIVAL>: …"
 
-	para "You again?"
+	para "You again,"
+	line "<PLAYER>?"
 
-	para "There's no need to"
-	line "panic. I don't"
+	para "If you want a"
+	line "battle, then you"
 
-	para "bother with wimps"
-	line "like you."
+	para "will have to"
+	line "wait."
 
-	para "Speaking of weak-"
-	line "lings, the city's"
+	para "The OLIVINE GYM"
+	line "LEADER isn't"
 
-	para "GYM LEADER isn't"
-	line "here."
+	para "taking challenges"
+	line "right now."
 
-	para "Supposedly taking"
-	line "care of a sick"
+	para "She's taking care"
+	line "of a sick #MON"
 
-	para "#MON at the"
+	para "at the GLITTER"
 	line "LIGHTHOUSE."
 
-	para "Humph! Boo-hoo!"
-	line "Just let sick"
-	cont "#MON go!"
+	para "She asked me to"
+	line "help her out,"
 
-	para "A #MON that"
-	line "can't battle is"
-	cont "worthless!"
+	para "but I can't SURF"
+	line "to get the"
+
+	para "SECRETPOTION the"
+	line "#MON needs."
 
 	para "Why don't you go"
-	line "train at the"
-	cont "LIGHTHOUSE?"
+	line "the LIGHTHOUSE?"
 
-	para "Who knows. It may"
-	line "make you a bit"
-	cont "less weak!"
+	para "Who knows. Maybe"
+	line "you could be of"
+	cont "greater help."
 	done
 
 OlivineCitySailor1Text:
@@ -271,9 +272,7 @@ OlivineGymSignText:
 	done
 
 OlivineLighthouseSignText:
-	text "OLIVINE LIGHTHOUSE"
-	line "Also known as the"
-	cont "GLITTER LIGHTHOUSE"
+	text "GLITTER LIGHTHOUSE"
 	done
 
 OlivineCityBattleTowerSignText:

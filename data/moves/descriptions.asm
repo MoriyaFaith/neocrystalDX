@@ -289,16 +289,16 @@ PayDayDescription:
 	next "them back later.@"
 
 FirePunchDescription:
-	db   "A fiery punch. May"
-	next "cause a burn.@"
+	db   "A fiery punch."
+	next "A physical attack.@"
 
 IcePunchDescription:
-	db   "An icy punch. May"
-	next "cause freezing.@"
+	db   "An icy punch."
+	next "A physical attack.@"
 
 ThunderpunchDescription:
 	db   "An electric punch."
-	next "It may paralyze.@"
+	next "A physical attack.@"
 
 ScratchDescription:
 	db   "Scratches with"
@@ -313,8 +313,8 @@ GuillotineDescription:
 	next "pincer attack.@"
 
 RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+	db   "Strikes foe with"
+	next "razor-sharp wind.@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
@@ -770,7 +770,7 @@ FireBlastDescription:
 
 WaterfallDescription:
 	db   "An aquatic charge"
-	next "attack.@"
+	next "attack. Physical.@"
 
 ClampDescription:
 	db   "Traps the foe for"

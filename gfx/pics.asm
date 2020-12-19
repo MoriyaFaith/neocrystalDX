@@ -553,7 +553,6 @@ WhitneyPic:          INCBIN "gfx/trainers/whitney.2bpp.lz"
 JolteonBackpic:      INCBIN "gfx/pokemon/jolteon/back.2bpp.lz"
 CaterpieFrontpic:    INCBIN "gfx/pokemon/caterpie/front.animated.2bpp.lz"
 HoppipBackpic:       INCBIN "gfx/pokemon/hoppip/back.2bpp.lz"
-BluePic:             INCBIN "gfx/trainers/blue.2bpp.lz"
 GranbullBackpic:     INCBIN "gfx/pokemon/granbull/back.2bpp.lz"
 GentlemanPic:        INCBIN "gfx/trainers/gentleman.2bpp.lz"
 ExecutivemPic:       INCBIN "gfx/trainers/executive_m.2bpp.lz"
@@ -782,6 +781,7 @@ INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 ; but entries for their banks exist in FixPicBank (see engine/gfx/load_pics.asm).
 
 SECTION "Pics 20", ROMX
+BluePic:             INCBIN "gfx/trainers/blue.2bpp.lz"
 
 SECTION "Pics 21", ROMX
 

@@ -92,13 +92,70 @@ BurnedTowerRivalBattleScript:
 
 .returnfrombattle
 	playmusic MUSIC_RIVAL_AFTER
+	checkevent EVENT_GOT_TOTODILE_FROM_ELM
+	iftrue .totodile2
+	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
+	iftrue .chikorita2
 	opentext
-	writetext BurnedTowerSilver_AfterText1
+	writetext BurnedTowerSilver_AfterText1_Totodile
 	waitbutton
 	closetext
 	setscene SCENE_BURNEDTOWER1F_NOTHING
 	setevent EVENT_RIVAL_BURNED_TOWER
-	special FadeOutMusic
+	pause 15
+	earthquake 50
+	showemote EMOTE_SHOCK, PLAYER, 15
+	playsound SFX_ENTER_DOOR
+	waitsfx
+	changeblock 10, 8, $25 ; hole
+	reloadmappart
+	pause 15
+	applymovement PLAYER, BurnedTower1FMovement_PlayerStartsToFall
+	playsound SFX_KINESIS
+	showemote EMOTE_SHOCK, BURNEDTOWER1F_SILVER, 20
+	opentext
+	writetext BurnedTowerSilver_AfterText2
+	waitbutton
+	closetext
+	setevent EVENT_HOLE_IN_BURNED_TOWER
+	pause 15
+	warpcheck
+	end
+
+.totodile2
+	opentext
+	writetext BurnedTowerSilver_AfterText1_Chikorita
+	waitbutton
+	closetext
+	setscene SCENE_BURNEDTOWER1F_NOTHING
+	setevent EVENT_RIVAL_BURNED_TOWER
+	pause 15
+	earthquake 50
+	showemote EMOTE_SHOCK, PLAYER, 15
+	playsound SFX_ENTER_DOOR
+	waitsfx
+	changeblock 10, 8, $25 ; hole
+	reloadmappart
+	pause 15
+	applymovement PLAYER, BurnedTower1FMovement_PlayerStartsToFall
+	playsound SFX_KINESIS
+	showemote EMOTE_SHOCK, BURNEDTOWER1F_SILVER, 20
+	opentext
+	writetext BurnedTowerSilver_AfterText2
+	waitbutton
+	closetext
+	setevent EVENT_HOLE_IN_BURNED_TOWER
+	pause 15
+	warpcheck
+	end
+
+.chikorita2
+	opentext
+	writetext BurnedTowerSilver_AfterText1_Cyndiquil
+	waitbutton
+	closetext
+	setscene SCENE_BURNEDTOWER1F_NOTHING
+	setevent EVENT_RIVAL_BURNED_TOWER
 	pause 15
 	earthquake 50
 	showemote EMOTE_SHOCK, PLAYER, 15
@@ -158,49 +215,167 @@ BurnedTower1FEusineMovement:
 	step_end
 
 BurnedTowerSilver_BeforeText:
-	text "<……> <……> <……>"
+	text "<RIVAL>: <……> <……> <……>"
 
 	para "…Oh, it's you."
 
 	para "I came looking for"
-	line "some legendary"
+	line "the legendary"
 
 	para "#MON that they"
 	line "say roosts here."
 
 	para "But there's"
-	line "nothing here!"
+	line "nothing here."
 
-	para "Nothing after all"
-	line "the trouble of"
+	para "If that's why"
+	line "you're here, then"
 
-	para "coming to this"
-	line "dump? No way!"
+	para "we're both out of"
+	line "luck."
 
-	para "It's all your"
-	line "fault!"
+	para "<……> <……> <……>"
+
+	para "How about a"
+	line "battle, <PLAYER>?"
+
+	para "I won't make the"
+	line "mistake of losing"
+	cont "this time."
 	done
 
 BurnedTowerSilver_WinText:
-	text "…Humph!"
+	text "I lost again…"
 
-	para "This is why I hate"
-	line "battling wimps."
+	para "<……> <……> <……>"
 
-	para "There's no"
-	line "challenge in it."
+	para "Maybe you have"
+	line "more power than"
+
+	para "I gave you credit"
+	line "for."
+
 	done
 
-BurnedTowerSilver_AfterText1:
-	text "…Aw, whatever."
+BurnedTowerSilver_AfterText1_Totodile:
+	text "<RIVAL>: Why are"
+	line "you so insistent"
 
-	para "You would never be"
-	line "able to catch a"
+	para "At hunting me"
+	line "down?"
 
-	para "legendary #MON"
-	line "anyway."
+	para "<……> <……> <……>"
+
+	para "No, I get it."
+
+	para "You want to"
+	line "return the"
+
+	para "#MON I stole"
+	line "from ELM."
+
+	para "I'm afraid that"
+	line "won't happen,"
+	cont "even if I wanted."
+
+	para "TOTODILE doesn't"
+	line "want to leave my"
+	cont "side."
+
+	para "They choose to"
+	line "help me."
+
+	para "I need to do what"
+	line "what I must, even"
+
+	para "if it means to"
+	line "resort to more"
+
+	para "underhanded means"
+	line "to do it."
+
+	para "Is your cause so"
+	line "just now?"
 	done
+BurnedTowerSilver_AfterText1_Cyndiquil:
+	text "<RIVAL>: Why are"
+	line "you so insistent"
 
+	para "At hunting me"
+	line "down?"
+
+	para "<……> <……> <……>"
+
+	para "No, I get it."
+
+	para "You want to"
+	line "return the"
+
+	para "#MON I stole"
+	line "from ELM."
+
+	para "I'm afraid that"
+	line "won't happen,"
+	cont "even if I wanted."
+
+	para "CYNDIQUIL doesn't"
+	line "want to leave my"
+	cont "side."
+
+	para "They choose to"
+	line "help me."
+
+	para "I need to do what"
+	line "what I must, even"
+
+	para "if it means to"
+	line "resort to more"
+
+	para "underhanded means"
+	line "to do it."
+
+	para "Is your cause so"
+	line "just now?"
+	
+	done
+BurnedTowerSilver_AfterText1_Chikorita:
+	text "<RIVAL>: Why are"
+	line "you so insistent"
+
+	para "At hunting me"
+	line "down?"
+
+	para "<……> <……> <……>"
+
+	para "No, I get it."
+
+	para "You want to"
+	line "return the #MON"
+	cont "I stole from ELM."
+
+	para "I'm afraid that"
+	line "won't happen,"
+	cont "even if I wanted."
+
+	para "CHIKORITA doesn't"
+	line "want to leave my"
+	cont "side."
+
+	para "They choose to"
+	line "help me."
+
+	para "I need to do what"
+	line "what I must, even"
+
+	para "if it means to"
+	line "resort to more"
+
+	para "underhanded means"
+	line "to do it."
+
+	para "Is your cause so"
+	line "just now?"
+	done
 BurnedTowerSilver_LossText:
 	text "…Humph!"
 
@@ -212,15 +387,23 @@ BurnedTowerSilver_LossText:
 	done
 
 BurnedTowerSilver_AfterText2:
-	text "Humph!"
+	text "It seems that the"
+	line "tower is less"
 
-	para "What are you doing"
-	line "falling into a"
+	para "stable than I had"
+	line "thought."
 
-	para "hole? Some genius"
-	line "you are!"
+	para "I should get out"
+	line "of here before"
 
-	para "Serves you right!"
+	para "The whole tower"
+	line "collapses."
+
+	para "<……> <……> <……>"
+	line "<……> <PLAYER> <……>"
+
+	para "I'll remember"
+	line "that name."
 	done
 
 BurnedTower1FEusineIntroText:

@@ -245,66 +245,64 @@ AzaleaTownPlayerLeavesKurtsHouseMovement:
 	step_end
 
 AzaleaTownRivalBeforeText:
-	text "…Tell me some-"
-	line "thing."
+	text "…Hmph. I heard"
+	line "that you beat"
+	cont "TEAM ROCKET, but"
 
-	para "Is it true that"
-	line "TEAM ROCKET has"
-	cont "returned?"
+	para "you only beat"
+	line "the leader of the"
+	cont "operation."
 
-	para "What? You beat"
-	line "them? Hah! Quit"
-	cont "lying."
+	para "I had to chase"
+	line "the rest out of"
+	cont "the WELL."
 
-	para "You're not joking?"
+	para "It seems that you"
+	line "don't know how to"
+	cont "get a job done."
+
+	para "You disagree?"
 	line "Then let's see how"
 	cont "good you are."
 	done
 
 AzaleaTownRivalWinText:
-	text "… Humph! Useless"
-	line "#MON!"
-
-	para "Listen, you. You"
+	text "Listen, you. You"
 	line "only won because"
 
 	para "my #MON were"
-	line "weak."
+	line "tired from"
+
+	para "picking up your"
+	line "slack."
 	done
 
 AzaleaTownRivalAfterText:
-	text "I hate the weak."
-
-	para "#MON, trainers."
-	line "It doesn't matter"
-	cont "who or what."
-
-	para "I'm going to be"
-	line "strong and wipe"
-	cont "out the weak."
-
-	para "That goes for TEAM"
-	line "ROCKET too."
+	text "I hate TEAM"
+	line "ROCKET. They're a"
+	cont "pathetic lot."
 
 	para "They act big and"
 	line "tough in a group."
 
 	para "But get them"
-	line "alone, and they're"
-	cont "weak."
+	line "alone, and they"
+	cont "don't stand a"
+	cont "chance."
 
-	para "I hate them all."
+	para "They make me"
+	line "sick."
 
 	para "You stay out of my"
-	line "way. A weakling"
-
-	para "like you is only a"
-	line "distraction."
+	line "way. TEAM ROCKET"
+	cont "is my battle, not"
+	cont "yours."
 	done
 
 AzaleaTownRivalLossText:
-	text "…Humph! I knew"
-	line "you were lying."
+	text "…Humph! Seems"
+	line "I was right about"
+	cont "you!"
 	done
 
 AzaleaTownRocket1Text:

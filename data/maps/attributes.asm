@@ -228,6 +228,12 @@ ENDM
 	connection south, Route29, ROUTE_29, -10
 	connection east, Route45, ROUTE_45, -36
 
+	map_attributes Route47, ROUTE_47, $05, NORTH
+	connection north, Route48, ROUTE_48, 0
+
+	map_attributes Route48, ROUTE_48, $05, SOUTH
+	connection south, Route47, ROUTE_47, 0
+
 	map_attributes PewterCity, PEWTER_CITY, $0f, SOUTH | EAST
 	connection south, Route2, ROUTE_2, 5
 	connection east, Route3, ROUTE_3, 5
@@ -654,6 +660,7 @@ ENDM
 	map_attributes BattleTowerHallway, BATTLE_TOWER_HALLWAY, $00, 0
 	map_attributes Route40BattleTowerGate, ROUTE_40_BATTLE_TOWER_GATE, $00, 0
 	map_attributes BattleTowerOutside, BATTLE_TOWER_OUTSIDE, $05, 0
+	map_attributes CianwoodDevHouse, CIANWOOD_DEVHOUSE, $00, 0
 	map_attributes ViridianGym, VIRIDIAN_GYM, $00, 0
 	map_attributes ViridianNicknameSpeechHouse, VIRIDIAN_NICKNAME_SPEECH_HOUSE, $00, 0
 	map_attributes TrainerHouse1F, TRAINER_HOUSE_1F, $00, 0

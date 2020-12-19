@@ -168,7 +168,7 @@ Route12_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 11, 33, ROUTE_12_SUPER_ROD_HOUSE, 1
+	warp_event 11, 33, LAKE_OF_RAGE_MAGIKARP_HOUSE, 1
 
 	def_coord_events
 

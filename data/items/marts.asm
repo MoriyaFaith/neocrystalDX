@@ -130,6 +130,10 @@ MartGoldenrod4F:
 	db CARBOS
 	db CALCIUM
 	db HP_UP
+	db LEAF_STONE
+	db FIRE_STONE
+	db WATER_STONE
+	db THUNDERSTONE
 	db -1 ; end
 
 MartGoldenrod5F1:

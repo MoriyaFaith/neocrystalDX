@@ -214,7 +214,6 @@ BugsyText_FuryCutterSpeech:
 	para "The longer your"
 	line "battle goes, the"
 	cont "better it gets."
-
 	para "Isn't that great?"
 	line "I discovered it!"
 	done

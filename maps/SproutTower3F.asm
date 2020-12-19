@@ -158,44 +158,30 @@ SproutTowerElderLecturesRivalText:
 
 	para "As promised, here"
 	line "is your HM."
-
-	para "But let me say"
-	line "this: You should"
-
-	para "treat your"
-	line "#MON better."
-
-	para "The way you battle"
-	line "is far too harsh."
-
-	para "#MON are not"
-	line "tools of war…"
 	done
 
 SproutTowerRivalOnlyCareAboutStrongText:
-	text "…"
+	text "<RIVAL>: …"
 	line "…Humph!"
 
-	para "He claims to be"
-	line "the ELDER but"
-	cont "he's weak."
+	para "The ELDER wasn't"
+	line "a match for me."
 
-	para "It stands to"
-	line "reason."
+	para "He kept going on"
+	line "on about courage"
+	cont "and guts."
 
-	para "I'd never lose to"
-	line "fools who babble"
+	para "Those don't win"
+	line "#MON battles."
 
-	para "about being nice"
-	line "to #MON."
+	para "It all boils down"
+	line "to the rules of"
+	cont "nature."
 
-	para "I only care about"
-	line "strong #MON"
-	cont "that can win."
-
-	para "I really couldn't"
-	line "care less about"
-	cont "weak #MON."
+	para "If you know what's"
+	line "good for you,"
+	cont "you'll stay out"
+	cont "of my way."
 	done
 
 SproutTowerRivalUsedEscapeRopeText:
@@ -220,10 +206,10 @@ SageLiSeenText:
 	line "test."
 
 	para "Allow me to check"
-	line "the ties between"
+	line "the courage of"
 
-	para "your #MON and"
-	line "you!"
+	para "you and your"
+	line "#MON!"
 	done
 
 SageLiBeatenText:

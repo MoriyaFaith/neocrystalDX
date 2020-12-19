@@ -379,12 +379,6 @@ SECTION "Miscellaneous", WRAM0
 
 ; This union spans 480 bytes.
 UNION
-; surrounding tiles
-; This buffer determines the size for the rest of the union;
-; it uses exactly 480 bytes.
-wSurroundingTiles:: ds SURROUNDING_WIDTH * SURROUNDING_HEIGHT
-
-NEXTU
 ; box save buffer
 ; SaveBoxAddress uses this buffer in three steps because it
 ; needs more space than the buffer can hold.
@@ -1630,7 +1624,9 @@ wcfbe::
 ; bit 7: SGB flag?
 	db
 
-	ds 1
+wOverworldDelaySkip::
+; amount of overworld frames to skip DelayFrame for
+	db
 
 wInBattleTowerBattle::
 ; 0 not in BattleTower-Battle
@@ -2184,9 +2180,9 @@ wTilesetBlocksBank:: db
 wTilesetBlocksAddress:: dw
 wTilesetCollisionBank:: db
 wTilesetCollisionAddress:: dw
+wTilesetAttributesBank:: db
+wTilesetAttributesAddress:: dw
 wTilesetAnim:: dw ; bank 3f
-	ds 2 ; unused
-wTilesetPalettes:: dw ; bank 3f
 wTilesetEnd::
 
 wEvolvableFlags:: flag_array PARTY_LENGTH
@@ -2242,7 +2238,9 @@ wOtherDecoration::    db
 wCurEnemyItem:: db
 ENDU
 
-	ds 3
+wOtherTrainerType:: db
+
+wTilesetDataAddress:: dw
 
 wLinkBattleRNs:: ds 10
 
@@ -2761,8 +2759,10 @@ wFastShipB1FSceneID::                             db
 wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
+wRoute42EcruteakGateSceneID::                     db
+wRoute47SceneID::                     db
 
-	ds 49
+	ds 48
 
 ; fight counts
 wJackFightCount::    db
@@ -2877,6 +2877,7 @@ wdc41:: ds 1
 wdc42:: ds 8
 wBuenasPassword:: db
 wBlueCardBalance:: db
+wWalkingOnBridge:: db
 wDailyRematchFlags:: ds 4
 wDailyPhoneItemFlags:: ds 4
 wDailyPhoneTimeOfDayFlags:: ds 4
@@ -2887,7 +2888,7 @@ wPlayerMonSelection:: ds 3
 wdc5f:: db
 wdc60:: db
 
-	ds 18
+	ds 17
 
 wStepCount:: db
 wPoisonStepCount:: db
@@ -3141,6 +3142,11 @@ NEXTU
 w3_de00:: ds $200
 ENDU
 
+SECTION "Surrounding Data", WRAMX
+
+wSurroundingTiles:: ds SURROUNDING_WIDTH * SURROUNDING_HEIGHT
+
+wSurroundingAttributes:: ds SURROUNDING_WIDTH * SURROUNDING_HEIGHT
 
 SECTION "GBC Video", WRAMX, ALIGN[8]
 ; LCD expects wLYOverrides to have an alignment of $100

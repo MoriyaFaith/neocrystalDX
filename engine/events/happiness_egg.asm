@@ -62,6 +62,9 @@ ChangeHappiness:
 	cp HAPPINESS_THRESHOLD_2
 	jr c, .ok
 	inc e
+	cp HAPPINESS_THRESHOLD_3
+	jr c, .ok
+	inc e
 
 .ok
 	dec c
@@ -105,38 +108,38 @@ ChangeHappiness:
 INCLUDE "data/events/happiness_changes.asm"
 
 StepHappiness::
-; Raise the party's happiness by 1 point every other step cycle.
+; Raise the party's happiness by 1 point every other step cycle. currently disabled.
 
-	ld hl, wHappinessStepCount
-	ld a, [hl]
-	inc a
-	and 1
-	ld [hl], a
-	ret nz
-
-	ld de, wPartyCount
-	ld a, [de]
-	and a
-	ret z
-
-	ld c, a
-	ld hl, wPartyMon1Happiness
-.loop
-	inc de
-	ld a, [de]
-	cp EGG
-	jr z, .next
-	inc [hl]
-	jr nz, .next
-	ld [hl], $ff
-
-.next
-	push de
-	ld de, PARTYMON_STRUCT_LENGTH
-	add hl, de
-	pop de
-	dec c
-	jr nz, .loop
+;	ld hl, wHappinessStepCount
+;	ld a, [hl]
+;	inc a
+;	and 1
+;	ld [hl], a
+;	ret nz
+;
+;	ld de, wPartyCount
+;	ld a, [de]
+;	and a
+;	ret z
+;
+;	ld c, a
+;	ld hl, wPartyMon1Happiness
+;.loop
+;	inc de
+;	ld a, [de]
+;	cp EGG
+;	jr z, .next
+;	inc [hl]
+;	jr nz, .next
+;	ld [hl], $ff
+;
+;.next
+;	push de
+;	ld de, PARTYMON_STRUCT_LENGTH
+;	add hl, de
+;	pop de
+;	dec c
+;	jr nz, .loop
 	ret
 
 DayCareStep::

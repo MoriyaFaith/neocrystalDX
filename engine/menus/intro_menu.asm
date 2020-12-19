@@ -298,7 +298,7 @@ InitializeNPCNames:
 	call CopyBytes
 	ret
 
-.Rival:  db "???@"
+.Rival:  db "BOY@"
 .Red:    db "RED@"
 .Green:  db "GREEN@"
 .Mom:    db "MOM@"
@@ -773,7 +773,7 @@ NamePlayer:
 	call RotateThreePalettesLeft
 
 	ld hl, wPlayerName
-	ld de, .Chris
+	ld de, .Gold
 	ld a, [wPlayerGender]
 	bit PLAYERGENDER_FEMALE_F, a
 	jr z, .Male
@@ -782,8 +782,8 @@ NamePlayer:
 	call InitName
 	ret
 
-.Chris:
-	db "CHRIS@@@@@@"
+.Gold:
+	db "GOLD@@@@@@@"
 .Kris:
 	db "KRIS@@@@@@@"
 

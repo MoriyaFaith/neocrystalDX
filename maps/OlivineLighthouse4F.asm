@@ -1,6 +1,7 @@
 	object_const_def
 	const OLIVINELIGHTHOUSE4F_SAILOR
 	const OLIVINELIGHTHOUSE4F_LASS
+	const OLIVINELIGHTHOUSE4F_POKE_BALL1
 
 OlivineLighthouse4F_MapScripts:
 	def_scene_scripts
@@ -28,6 +29,9 @@ TrainerSailorKent:
 	waitbutton
 	closetext
 	end
+
+OlivineLighthouse4FMetalCoat:
+	itemball METAL_COAT
 
 SailorKentSeenText:
 	text "JASMINE must be"
@@ -101,3 +105,4 @@ OlivineLighthouse4F_MapEvents:
 	def_object_events
 	object_event  7, 14, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSailorKent, -1
 	object_event 11,  2, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerLassConnie, -1
+	object_event  5,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, OlivineLighthouse4FMetalCoat, EVENT_OLIVINE_LIGHTHOUSE_4F_METAL_COAT

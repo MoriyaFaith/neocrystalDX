@@ -2585,6 +2585,7 @@ PlayerAttackDamage:
 	ld a, [hl]
 	cp SPECIAL
 	jr nc, .special
+	
 
 .physical
 	ld hl, wEnemyMonDefense
@@ -2611,6 +2612,11 @@ PlayerAttackDamage:
 	jr .thickclub
 
 .special
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_ELEMENTAL_PUNCH
+	jr z, .elepunch
+
 	ld hl, wEnemyMonSpclDef
 	ld a, [hli]
 	ld b, a
@@ -2632,6 +2638,29 @@ PlayerAttackDamage:
 	ld b, a
 	ld c, [hl]
 	ld hl, wPlayerSpAtk
+
+.elepunch
+	ld hl, wEnemyMonSpclDef
+	ld a, [hli]
+	ld b, a
+	ld c, [hl]
+
+	ld a, [wEnemyScreens]
+	bit SCREENS_LIGHT_SCREEN, a
+	jr z, .elepunchcrit
+	sla c
+	rl b
+
+.elepunchcrit
+	ld hl, wBattleMonAttack
+	call CheckDamageStatsCritical
+	jr c, .thickclub
+
+	ld hl, wEnemySpDef
+	ld a, [hli]
+	ld b, a
+	ld c, [hl]
+	ld hl, wPlayerAttack
 
 .lightball
 ; Note: Returns player special attack at hl in hl.
@@ -2853,6 +2882,11 @@ EnemyAttackDamage:
 	jr .thickclub
 
 .Special:
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_ELEMENTAL_PUNCH
+	jr z, .elepunch
+
 	ld hl, wBattleMonSpclDef
 	ld a, [hli]
 	ld b, a
@@ -2865,6 +2899,28 @@ EnemyAttackDamage:
 	rl b
 
 .specialcrit
+	ld hl, wEnemyMonSpclAtk
+	call CheckDamageStatsCritical
+	jr c, .lightball
+	ld hl, wPlayerSpDef
+	ld a, [hli]
+	ld b, a
+	ld c, [hl]
+	ld hl, wEnemySpAtk
+
+.elepunch
+	ld hl, wBattleMonSpclDef
+	ld a, [hli]
+	ld b, a
+	ld c, [hl]
+
+	ld a, [wPlayerScreens]
+	bit SCREENS_LIGHT_SCREEN, a
+	jr z, .elepunchcrit
+	sla c
+	rl b
+
+.elepunchcrit
 	ld hl, wEnemyMonSpclAtk
 	call CheckDamageStatsCritical
 	jr c, .lightball

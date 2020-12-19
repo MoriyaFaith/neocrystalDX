@@ -309,7 +309,18 @@ MrPokemonsHouse_GetDexText:
 	done
 
 MrPokemonsHouse_OakText2:
-	text "Go meet many kinds"
+	text "Not many of those"
+	line "exist in the"
+
+	para "world, so take"
+	line "very good care of"
+	cont "it!"
+
+	para "One was even"
+	line "even stolen from"
+	cont "me very recently."
+
+	para "Go meet many kinds"
 	line "of #MON and"
 
 	para "complete that"

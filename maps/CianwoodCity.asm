@@ -362,8 +362,12 @@ CianwoodPharmacySignText:
 	para "CIANWOOD CITY"
 	line "PHARMACY"
 
-	para "We Await Your"
-	line "Medicinal Queries"
+	para "We have moved"
+	line "our location to"
+	cont "deal with theft."
+
+	para "Vist us at"
+	line "ROUTE 48!"
 	done
 
 CianwoodPhotoStudioSignText:
@@ -386,10 +390,11 @@ CianwoodCity_MapEvents:
 	warp_event 17, 41, MANIAS_HOUSE, 1
 	warp_event  8, 43, CIANWOOD_GYM, 1
 	warp_event 23, 43, CIANWOOD_POKECENTER_1F, 1
-	warp_event 15, 47, CIANWOOD_PHARMACY, 1
+	warp_event 15, 47, CIANWOOD_DEVHOUSE, 1
 	warp_event  9, 31, CIANWOOD_PHOTO_STUDIO, 1
 	warp_event 15, 37, CIANWOOD_LUGIA_SPEECH_HOUSE, 1
 	warp_event  5, 17, POKE_SEERS_HOUSE, 1
+	warp_event  4, 23, ROUTE_47, 1
 
 	def_coord_events
 	coord_event 11, 16, SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE, CianwoodCitySuicuneAndEusine

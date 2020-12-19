@@ -74,8 +74,8 @@ CianwoodPharmacy_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  2,  7, CIANWOOD_CITY, 4
-	warp_event  3,  7, CIANWOOD_CITY, 4
+	warp_event  2,  7, ROUTE_48, 1
+	warp_event  3,  7, ROUTE_48, 1
 
 	def_coord_events
 
