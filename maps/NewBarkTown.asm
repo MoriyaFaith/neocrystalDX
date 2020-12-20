@@ -184,7 +184,7 @@ Movement_SilverShovesYouOut_NBT:
 
 Movement_SilverReturnsToTheShadows_NBT:
 	step RIGHT
-	step_end
+	step_resume
 
 Text_GearIsImpressive:
 	text "Wow, your #GEAR"

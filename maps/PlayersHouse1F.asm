@@ -208,7 +208,7 @@ MomTurnsBackMovement:
 
 MomWalksBackMovement:
 	slow_step LEFT
-	step_end
+	step_resume
 
 ElmsLookingForYouText:
 	text "Oh, <PLAYER>…! Our"

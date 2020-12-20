@@ -1084,12 +1084,12 @@ ShowEmoteScript:
 .Show:
 	show_emote
 	step_sleep 1
-	step_resume
+	step_end
 
 .Hide:
 	hide_emote
 	step_sleep 1
-	step_resume
+	step_end
 
 Script_earthquake:
 	ld hl, EarthquakeMovement
@@ -1111,7 +1111,7 @@ Script_earthquake:
 EarthquakeMovement:
 	step_shake 16 ; the 16 gets overwritten with the script byte
 	step_sleep 16 ; the 16 gets overwritten with the lower 6 bits of the script byte
-	step_resume
+	step_end
 .End
 
 Script_loadpikachudata:
