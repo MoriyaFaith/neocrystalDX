@@ -34,7 +34,7 @@ WaitScript:
 	dec [hl]
 	ret nz
 
-	farcall Function58b9
+	farcall ReleaseAllMapObjects
 
 	ld a, SCRIPT_READ
 	ld [wScriptMode], a
@@ -48,7 +48,7 @@ WaitScriptMovement:
 	bit 7, [hl]
 	ret nz
 
-	farcall Function58b9
+	farcall ReleaseAllMapObjects
 
 	ld a, SCRIPT_READ
 	ld [wScriptMode], a
@@ -1084,12 +1084,12 @@ ShowEmoteScript:
 .Show:
 	show_emote
 	step_sleep 1
-	step_end
+	step_resume
 
 .Hide:
 	hide_emote
 	step_sleep 1
-	step_end
+	step_resume
 
 Script_earthquake:
 	ld hl, EarthquakeMovement
@@ -1111,7 +1111,7 @@ Script_earthquake:
 EarthquakeMovement:
 	step_shake 16 ; the 16 gets overwritten with the script byte
 	step_sleep 16 ; the 16 gets overwritten with the lower 6 bits of the script byte
-	step_end
+	step_resume
 .End
 
 Script_loadpikachudata:
