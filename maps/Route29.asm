@@ -236,7 +236,7 @@ DudeMovementData1b:
 	step DOWN
 	step DOWN
 	step DOWN
-	step_end
+	step_resume
 
 DudeMovementData2b:
 	step LEFT
@@ -244,7 +244,7 @@ DudeMovementData2b:
 	step DOWN
 	step DOWN
 	step DOWN
-	step_end
+	step_resume
 
 CatchingTutorialBoxFullText:
 	text "#MON hide in"
